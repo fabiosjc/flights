@@ -15,6 +15,13 @@ public class City {
     private Long id;
     private String name;
 
+    public City() {
+    }
+
+    public City(String name) {
+        this.name = name;
+    }
+
     @Id
     @GeneratedValue
     public Long getId() {

@@ -42,7 +42,7 @@ public class Flight {
         this.id = id;
     }
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     public String getNumber() {
         return number;
     }
