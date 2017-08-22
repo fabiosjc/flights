@@ -3,6 +3,7 @@ package com.fabiosjc.flights.model.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Representação simplificada de uma cidade
@@ -10,7 +11,7 @@ import javax.persistence.Id;
  *@author fabio on 20/08/17.
  */
 @Entity
-public class City {
+public class City implements Serializable {
 
     private Long id;
     private String name;

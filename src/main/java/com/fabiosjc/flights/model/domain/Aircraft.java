@@ -3,6 +3,7 @@ package com.fabiosjc.flights.model.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Representação simplificada da entidade Aeronave
@@ -10,13 +11,13 @@ import javax.persistence.Id;
  * @author fabio on 20/08/17.
  */
 @Entity
-public class Airplane {
+public class Aircraft implements Serializable {
 
     private Long id;
     private String model;
     private String number;
 
-    public Airplane() {
+    public Aircraft() {
         // default constructor
     }
 

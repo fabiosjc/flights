@@ -3,6 +3,7 @@ package com.fabiosjc.flights.model.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Represanta as informações de um Piloto
@@ -10,7 +11,7 @@ import javax.persistence.Id;
  * Created by fabio on 20/08/17.
  */
 @Entity
-public class Pilot {
+public class Pilot implements Serializable {
 
     private Long id;
     private String name;

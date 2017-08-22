@@ -3,6 +3,8 @@ package com.fabiosjc.flights.model.domain;
 import com.fabiosjc.flights.model.enums.FlightStatus;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -11,7 +13,7 @@ import java.util.Date;
  * @author fabio on 20/08/17.
  */
 @Entity
-public class Flight {
+public class Flight implements Serializable{
 
     private Long id;
     private String number;
@@ -20,8 +22,8 @@ public class Flight {
     private Date arrival;
     private City origin;
     private City destination;
-    private Number duration;
-    private Airplane airplane;
+    private BigDecimal duration;
+    private Aircraft aircraft;
     private Pilot pilot;
 
     public Flight() {
@@ -51,6 +53,16 @@ public class Flight {
         this.number = number;
     }
 
+    @Column(name = "FLIGHT_STATUS")
+    @Enumerated(EnumType.STRING)
+    public FlightStatus getFlightStatus() {
+        return flightStatus;
+    }
+
+    public void setFlightStatus(FlightStatus flightStatus) {
+        this.flightStatus = flightStatus;
+    }
+
     public Date getDeparture() {
         return departure;
     }
@@ -68,6 +80,7 @@ public class Flight {
     }
 
     @OneToOne
+    @JoinColumn(name = "origin_id")
     public City getOrigin() {
         return origin;
     }
@@ -77,6 +90,7 @@ public class Flight {
     }
 
     @OneToOne
+    @JoinColumn(name = "destination_id")
     public City getDestination() {
         return destination;
     }
@@ -86,15 +100,17 @@ public class Flight {
     }
 
     @OneToOne
-    public Airplane getAirplane() {
-        return airplane;
+    @JoinColumn(name = "aircraft_id")
+    public Aircraft getAircraft() {
+        return aircraft;
     }
 
-    public void setAirplane(Airplane airplane) {
-        this.airplane = airplane;
+    public void setAircraft(Aircraft aircraft) {
+        this.aircraft = aircraft;
     }
 
     @OneToOne
+    @JoinColumn(name = "pilot_id")
     public Pilot getPilot() {
         return pilot;
     }
@@ -103,11 +119,11 @@ public class Flight {
         this.pilot = pilot;
     }
 
-    public Number getDuration() {
+    public BigDecimal getDuration() {
         return duration;
     }
 
-    public void setDuration(Number duration) {
+    public void setDuration(BigDecimal duration) {
         this.duration = duration;
     }
 }
