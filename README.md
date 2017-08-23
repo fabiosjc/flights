@@ -3,8 +3,9 @@
 Challenge to represent the flights of an airline with its respective schedules
 
 ## Requirements
-Java 8 installed locally
-Maven 3 installed locally
+- Java 8 installed locally
+- Maven 3 installed locally
+- NPM
 
 ## Instructions
 
