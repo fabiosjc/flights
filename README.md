@@ -10,8 +10,9 @@ Maven 3 installed locally
 
 1. Run `mvn spring-boot:run`
 2. Run `npm i` to install the front end dependencies
+3. Application address: http://localhost:8080
 
 ## Public API
 
-http://localhost:8080/api/flights
-http://localhost:8080/api/flights/1
+- http://localhost:8080/api/flights
+- http://localhost:8080/api/flights/1
