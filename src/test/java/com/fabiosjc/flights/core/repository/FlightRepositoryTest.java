@@ -24,7 +24,7 @@ public class FlightRepositoryTest {
     @Test
     public void findAll() throws Exception {
         List<Flight> flights = flightRepository.findAll();
-        Assert.assertEquals("Total de vôos diferente do esperado", flights.size(), 2);
+        Assert.assertEquals("Total de vôos diferente do esperado", flights.size(), 3);
     }
 
     @Test

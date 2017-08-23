@@ -16,6 +16,7 @@ import java.util.Date;
 public class Flight implements Serializable{
 
     private Long id;
+    private Airline airline;
     private String number;
     private FlightStatus flightStatus;
     private Date departure;
@@ -125,5 +126,15 @@ public class Flight implements Serializable{
 
     public void setDuration(BigDecimal duration) {
         this.duration = duration;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "airline_id")
+    public Airline getAirline() {
+        return airline;
+    }
+
+    public void setAirline(Airline airline) {
+        this.airline = airline;
     }
 }
