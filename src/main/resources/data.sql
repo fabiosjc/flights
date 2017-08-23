@@ -1,5 +1,6 @@
-insert into CITY (id, name) values (1, 'GUARULHOS')
-insert into CITY (id, name) values (2, 'BELÉM')
+insert into CITY (id, name) values (1, 'São Paulo')
+insert into CITY (id, name) values (2, 'Belém')
+insert into CITY (id, name) values (3, 'Florianópolis')
 
 insert into AIRCRAFT (id, model, number) values (1, 'Lineage 1000', 'L100')
 insert into AIRCRAFT (id, model, number) values (2, 'Legacy 650', 'L650')
