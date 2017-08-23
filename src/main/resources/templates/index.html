@@ -16,10 +16,29 @@
     <script src="./js/services/flights-service.js" />
 </head>
 <body>
-    <div>
-        <input type="text" ng-model="flights.search" class="search-query" id="projects_search" placeholder="Buscar" />
-        <flights-list ></flights-list>
-    </div>
 
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Airline Flights</a>
+        <form class="form-inline mt-2 mt-md-0">
+            <input type="text" ng-model="flights.search" class="search-query" id="projects_search1" placeholder="Busca" />
+        </form>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <main class="col-sm-12 ml-sm-auto col-md-12 pt-3" role="main">
+                <h1></h1>
+                <div>
+                    <flights-list ></flights-list>
+                </div>
+                <hr />
+                <footer>
+                    <div class="col-lg-12">
+                        <p>Copyright &copy; fabiosjc@2017</p>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
 </body>
 </html>
