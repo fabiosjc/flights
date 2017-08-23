@@ -17,12 +17,43 @@
         <td>{{flight.number}}</td>
         <td>{{flight.origin.name}}</td>
         <td>{{flight.destination.name}}</td>
-        <td>{{flight.departure}}</td>
-        <td>{{flight.arrival}}</td>
+        <td>{{flight.departure | date : format : shortDate}}</td>
+        <td>{{flight.arrival | date : format : shortDate}}</td>
         <td>{{flight.flightStatus}}</td>
         <td>
-            <a ng-href="#/edit/{{flight.$id}}"><i class="icon-pencil"></i></a>
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#collapseDetails"
+                    aria-expanded="false" ng-click="showDetails(flight.id)">Info</button>
         </td>
     </tr>
     </tbody>
 </table>
+
+
+<div class="collapse" id="collapseDetails" >
+    <h3>Vôo {{flight.number}}</h3>
+    <div class="card card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>Aeronave: {{flight.aircraft.model}} / {{flight.aircraft.number}}</p>
+                </div>
+                <div class="col">
+                    <p>Piloto: {{flight.pilot.name}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Origem: {{origin.name}}</p>
+                </div>
+                <div class="col">
+                    <p>Destino: {{flight.destination.name}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Status: {{flight.flightStatus}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

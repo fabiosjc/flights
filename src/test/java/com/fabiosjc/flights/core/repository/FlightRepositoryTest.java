@@ -33,4 +33,11 @@ public class FlightRepositoryTest {
         Assert.assertNotNull("Vôo deveria ter sido encontrado", flight);
     }
 
+    @Test
+    public void findById() {
+        Flight flight = flightRepository.findById(Long.valueOf(1));
+        Assert.assertNotNull("Vôo deveria ter sido encontrado", flight);
+        Assert.assertEquals("Vôo não encontrado", flight.getNumber(), "FLY311");
+    }
+
 }

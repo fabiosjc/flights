@@ -4,6 +4,7 @@ import com.fabiosjc.flights.core.repository.FlightRepository;
 import com.fabiosjc.flights.model.domain.Flight;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,5 +23,10 @@ public class FlightsController {
     @RequestMapping(method = RequestMethod.GET, value = "/api/flights")
     public List<Flight> list(){
         return repository.findAll();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/api/flights/{id}")
+    public Flight findById(@PathVariable("id") long id){
+        return repository.findById(id);
     }
 }
