@@ -1,0 +1,28 @@
+<table>
+    <thead>
+    <tr>
+        <th>Cia Aérea</th>
+        <th>Voo</th>
+        <th>Origem</th>
+        <th>Destino</th>
+        <th>Partida</th>
+        <th>Previsto</th>
+        <th>Status</th>
+        <th>Detalhes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="flight in flights | filter:flights.search | orderBy:'name'">
+        <td>{{flight.airline.name}}</td>
+        <td>{{flight.number}}</td>
+        <td>{{flight.origin.name}}</td>
+        <td>{{flight.destination.name}}</td>
+        <td>{{flight.departure}}</td>
+        <td>{{flight.arrival}}</td>
+        <td>{{flight.flightStatus}}</td>
+        <td>
+            <a ng-href="#/edit/{{flight.$id}}"><i class="icon-pencil"></i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
