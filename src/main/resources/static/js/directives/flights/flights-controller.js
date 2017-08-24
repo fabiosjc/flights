@@ -10,7 +10,7 @@ angular
 
       // TODO passar lógica para um service e testar
       function loadFlights() {
-        $http.get('http://localhost:8080/api/flights')
+        $http.get('http://flights-challenge.herokuapp.com/api/flights')
           .then(
             function(response){
               $scope.flights = response.data
@@ -21,7 +21,7 @@ angular
       }
 
       $scope.showDetails = function(id) {
-          $http.get('http://localhost:8080/api/flights/'+id)
+          $http.get('http://flights-challenge.herokuapp.com/api/flights/'+id)
             .then(
               function(response){
                 $scope.flight = response.data
