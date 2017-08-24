@@ -49,6 +49,7 @@
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
     "start": "webpack --config ./webpack.config.js",
-    "heroku-postbuild": "npm install && webpack -p --config webpack.config.js --progress"
+//    "heroku-postbuild": "npm install && webpack -p --config webpack.config.js --progress"
+    "heroku-postbuild": "npm install"
   }
 }

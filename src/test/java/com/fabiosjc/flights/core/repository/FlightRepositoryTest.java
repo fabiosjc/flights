@@ -29,15 +29,22 @@ public class FlightRepositoryTest {
 
     @Test
     public void findByNumber() {
-        Flight flight = flightRepository.findByNumber("FLY411");
+        Flight flight = flightRepository.findByNumber("03184");
         Assert.assertNotNull("Vôo deveria ter sido encontrado", flight);
+    }
+
+    @Test
+    public void checkFlightStatusLabel() {
+        Flight flight = flightRepository.findByNumber("03184");
+        Assert.assertEquals(flight.getFlightStatus().name(), "LANDED");
+        Assert.assertEquals(flight.getFlightStatus().getLabel(), "Desembarcando");
     }
 
     @Test
     public void findById() {
         Flight flight = flightRepository.findById(Long.valueOf(1));
         Assert.assertNotNull("Vôo deveria ter sido encontrado", flight);
-        Assert.assertEquals("Vôo não encontrado", flight.getNumber(), "FLY311");
+        Assert.assertEquals("Vôo não encontrado", flight.getNumber(), "00752");
     }
 
 }
