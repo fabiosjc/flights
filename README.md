@@ -19,5 +19,11 @@ http://flights-challenge.herokuapp.com/
 
 ## Public API
 
-- http://flights-challenge.herokuapp.com//api/flights
-- http://flights-challenge.herokuapp.com//api/flights/1
+- http://flights-challenge.herokuapp.com/api/flights
+- http://flights-challenge.herokuapp.com/api/flights/1
+- http://localhost:8080/api/flights/airline/tam
+- http://localhost:8080/api/flights/airline/azul
+
+## API Documentation
+
+- http://flights-challenge.herokuapp.com/swagger-ui.html

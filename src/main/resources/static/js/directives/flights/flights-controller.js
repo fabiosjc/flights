@@ -1,30 +1,31 @@
 angular
     .module('app')
-    .controller('FlightsController', function($scope, $http) {
+    .controller('FlightsController', function($http) {
+      var URL = 'http://flights-challenge.herokuapp.com'
+      var vm = this
 
-      function init(){
-        $scope.flights = []
-        $scope.flight = {}
+      function init() {
+        vm.flights = []
+        vm.flight = {}
         loadFlights()
       }
 
       // TODO passar lógica para um service e testar
       function loadFlights() {
-        $http.get('http://flights-challenge.herokuapp.com/api/flights')
-          .then(
-            function(response){
-              $scope.flights = response.data
-            },
-            function(err) {
-              console.error('Erro ao consultar os vôos', err)
+        $http.get(`${URL}/api/flights`).then(
+          function(response){
+            vm.flights = response.data
+          },
+          function(err) {
+            console.error('Erro ao consultar os vôos', err)
         })
       }
 
-      $scope.showDetails = function(id) {
-          $http.get('http://flights-challenge.herokuapp.com/api/flights/'+id)
+      vm.showDetails = function(id) {
+          $http.get(`${URL}/api/flights/${id}`)
             .then(
               function(response){
-                $scope.flight = response.data
+                vm.flight = response.data
               },
               function(err) {
                 console.error('Erro ao consultar o vôo', err)

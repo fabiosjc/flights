@@ -47,4 +47,9 @@ public class FlightRepositoryTest {
         Assert.assertEquals("Vôo não encontrado", flight.getNumber(), "00752");
     }
 
+    @Test
+    public void findByAirline() throws Exception {
+        List<Flight> flights = flightRepository.findByAirline("tam");
+        Assert.assertEquals("Total de vôos diferente do esperado", flights.size(), 2);
+    }
 }

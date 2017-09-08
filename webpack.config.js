@@ -2,14 +2,15 @@
 * Referência para configuração: https://github.com/sunilp/angular-typescript-webpack-java
 */
 
-'use strict';
+'use strict'
 
 // Modules
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+var webpack = require('webpack')
+var autoprefixer = require('autoprefixer')
+var argv = require('yargs').argv
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 /**
  * Env
@@ -18,6 +19,19 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ENV = process.env.npm_lifecycle_event;
 var isTest = ENV === 'test' || ENV === 'test-watch';
 var isProd = ENV === 'build';
+
+
+if (ENV === 'build') {
+ console.log('Running build tasks!');
+}
+
+if (ENV === 'dev') {
+ console.log('Running the dev config!');
+}
+
+if (ENV === 'start') {
+ console.log('Running App in production!');
+}
 
 module.exports = function makeWebpackConfig() {
   /**
@@ -34,7 +48,7 @@ module.exports = function makeWebpackConfig() {
    * Karma will set this when it's a test build
    */
   config.entry = isTest ? void 0 : {
-    app: './src/main/webapp/app/app.js'
+    app: './src/main/resources/static/js/app.js'
   };
 
   /**
@@ -45,7 +59,7 @@ module.exports = function makeWebpackConfig() {
    */
   config.output = isTest ? {} : {
     // Absolute output directory
-    path: __dirname + '/src/main/webapp/dist',
+    path: __dirname + '/target/classes/dist',
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
@@ -219,7 +233,7 @@ module.exports = function makeWebpackConfig() {
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
-        from: __dirname + '/src/main/webapp'
+        from: __dirname + '/src/main/resources/static'
       }])
     )
   }

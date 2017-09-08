@@ -11,6 +11,7 @@ import java.util.List;
 @Entity
 public class Airline {
     private Long id;
+    private String code;
     private String name;
 
     @Id
@@ -31,4 +32,11 @@ public class Airline {
         this.name = name;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 }

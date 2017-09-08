@@ -2,8 +2,8 @@ insert into CITY (id, name) values (1, 'São Paulo')
 insert into CITY (id, name) values (2, 'Belém')
 insert into CITY (id, name) values (3, 'Florianópolis')
 
-insert into AIRLINE (id, name) values (1, 'Latam')
-insert into AIRLINE (id, name) values (2, 'Azul')
+insert into AIRLINE (id, code, name) values (1, 'tam', 'Latam')
+insert into AIRLINE (id, code, name) values (2, 'azul', 'Azul')
 
 insert into AIRCRAFT (id, model, number) values (1, 'Lineage 1000', 'L100')
 insert into AIRCRAFT (id, model, number) values (2, 'Legacy 650', 'L650')
