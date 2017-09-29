@@ -29,31 +29,4 @@
 </table>
 
 
-<div class="collapse" id="collapseDetails" >
-    <h3>Vôo {{flight.number}}</h3>
-    <div class="card card-body">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <p>Aeronave: {{vm.flight.aircraft.model}} / {{vm.flight.aircraft.number}}</p>
-                </div>
-                <div class="col">
-                    <p>Piloto: {{vm.flight.pilot.name}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Origem: {{vm.flight.origin.name}}</p>
-                </div>
-                <div class="col">
-                    <p>Destino: {{vm.flight.destination.name}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    Status: {{vm.flight.flightStatus}}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<flights-details flight="vm.flight"></flights-details>

@@ -6,7 +6,7 @@ angular
 
       function init() {
         vm.flights = []
-        vm.flight = {}
+        vm.flight = undefined
         loadFlights()
       }
 
