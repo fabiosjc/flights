@@ -10,7 +10,7 @@ Challenge to represent the flights of an airline with its respective schedules
 ## Instructions
 
 1. Run `mvn spring-boot:run`
-2. Run `npm i` to install the front end dependencies
+2. Open a new terminal and run `npm i` to install front-end dependencies
 3. Application address: http://localhost:8080
 
 ## Demo
@@ -21,9 +21,9 @@ http://flights-challenge.herokuapp.com/
 
 - http://flights-challenge.herokuapp.com/api/flights
 - http://flights-challenge.herokuapp.com/api/flights/1
-- http://localhost:8080/api/flights/airline/tam
-- http://localhost:8080/api/flights/airline/azul
+- http://flights-challenge.herokuapp.com/api/flights/airline/tam
+- http://flights-challenge.herokuapp.com/api/flights/airline/azul
 
 ## API Documentation
 
-- http://flights-challenge.herokuapp.com/swagger-ui.html
+- Open http://flights-challenge.herokuapp.com/swagger-ui.html and click on `List Operations` link
